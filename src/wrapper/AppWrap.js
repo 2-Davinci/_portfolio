@@ -5,6 +5,7 @@ import NavigationDots from "../components/NavigationDots";
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     const date = new Date().getFullYear();
+
     return (
       <div id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
