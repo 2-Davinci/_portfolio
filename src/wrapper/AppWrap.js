@@ -4,7 +4,7 @@ import NavigationDots from "../components/NavigationDots";
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
-    const date = new Date().getFullYear();
+    const year = new Date().getFullYear();
 
     return (
       <div id={idName} className={`app__container ${classNames}`}>
@@ -13,7 +13,7 @@ const AppWrap = (Component, idName, classNames) =>
           <Component />
 
           <div className="copyright">
-            <p className="p-text">@{date} DAVINCI</p>
+            <p className="p-text">@{year} DAVINCI</p>
             <p className="p-text">All rights reserved</p>
           </div>
         </div>
