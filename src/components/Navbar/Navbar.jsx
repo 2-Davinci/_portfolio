@@ -3,6 +3,7 @@ import { images } from '../../constants'
 import{HiMenuAlt4, HiX} from "react-icons/hi"
 import { motion } from 'framer-motion'
 import "./Navbar.scss"
+import { BsLinkedin, BsTiktok, BsWhatsapp } from 'react-icons/bs'
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   return (
@@ -30,12 +31,16 @@ const Navbar = () => {
                   <ul>
                   {["home", "about", "work", "skills", "contact"].map((item)=> (
                  <li className='' key={`${item}`}>
+
               
               <a href={`#${item}`} onClick={()=> setToggle(false)}>
                 {item}
               </a>
+              
           </li>
+          
         ))}
+       
                   </ul>
                  
               </motion.div>

@@ -5,6 +5,7 @@ import AppWrap from '../../wrapper/AppWrap';
 import MotionWrap from '../../wrapper/MotionWrap';
 import { client } from '../../client';
 import "./Footer.scss"
+import { BsLinkedin, BsTiktok, BsWhatsapp } from 'react-icons/bs';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -47,7 +48,7 @@ const Footer = () => {
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">+234 708 756 1411</a>
+          <a href="tel:+2347087561411" className="p-text">+234 708 756 1411</a>
         </div>
       </div>
       {!isFormSubmitted ? (
@@ -76,6 +77,26 @@ const Footer = () => {
           </h3>
         </div>
       )}
+      <h3 className=''>
+        Connect with me 
+      </h3>
+      <div className='app__social socail-icons'>
+        <div>
+          <a href="https://www.linkedin.com/in/olotudavid/">
+          <BsLinkedin/>
+          </a>
+          </div>
+        <div>
+          <a href='https://wa.me/+2347087561411'>
+          <BsWhatsapp/>
+          </a>
+          </div>
+        <div>
+          <a href='https://www.tiktok.com/@david_khen'>
+          <BsTiktok/>
+          </a>
+          </div>
+    </div>
     </>
   );
 };
