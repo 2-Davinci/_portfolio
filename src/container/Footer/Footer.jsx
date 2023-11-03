@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import emailjs from '@emailjs/browser';
 import { images } from '../../constants';
 import AppWrap from '../../wrapper/AppWrap';
 import MotionWrap from '../../wrapper/MotionWrap';
@@ -35,8 +35,18 @@ const Footer = () => {
         setIsFormSubmitted(true);
       })
       .catch((err) => console.log(err));
+      
   };
-
+const sendEmail= (e)=> {
+  e.preventDefault()
+  emailjs.sendForm('Portfolio', 'service_quemii3', e.current, 'mIZydoIieVXnuhhmp')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+}
   return (
     <>
       <h2 className="head-text">Take a coffee & chat with me</h2>
@@ -52,9 +62,12 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
+         <form onSubmit={sendEmail} className='forms'>
         <div className="app__footer-form app__flex">
+         
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+         
+            <input className="p-text" type="text" placeholder="Your Name" name="name" value={username} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
@@ -69,7 +82,9 @@ const Footer = () => {
             />
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          
         </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">

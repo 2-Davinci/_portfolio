@@ -65,7 +65,12 @@
 .app__footer-cards .app__footer-card:last-child:hover {
   box-shadow: 0 0 25px #f2f7fb;
 }
-
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .app__footer-form {
   width: 60%;
   flex-direction: column;
